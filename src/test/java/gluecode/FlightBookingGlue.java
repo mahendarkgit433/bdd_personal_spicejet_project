@@ -59,7 +59,7 @@ public class FlightBookingGlue
 	@When("I select {string} as the passenger type")
 	public void i_select_as_the_passenger_type(String string) 
 	{
-
+		Reporter.log("Hi",true);
 	}
 
 	@When("I select {string} as the preferred currency")
