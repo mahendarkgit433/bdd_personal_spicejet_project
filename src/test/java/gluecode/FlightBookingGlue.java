@@ -2,6 +2,7 @@ package gluecode;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.testng.Reporter;
 
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
@@ -88,7 +89,7 @@ public class FlightBookingGlue
 	@When("I select Departure Date as {string} and  Return date as {string}")
 	public void i_select_departure_date_as_and_return_date_as(String string, String string2) 
 	{
-	 
+	 Reporter.log("I am on the SpiceJet flight booking page",true);
 	}
 
 
