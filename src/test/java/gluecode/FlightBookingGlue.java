@@ -89,7 +89,7 @@ public class FlightBookingGlue
 	@When("I select Departure Date as {string} and  Return date as {string}")
 	public void i_select_departure_date_as_and_return_date_as(String string, String string2) 
 	{
-	 Reporter.log("I am on the SpiceJet flight booking page man good job",true);
+	 Reporter.log("I am on the SpiceJet flight booking page man good job.",true);
 	}
 
 

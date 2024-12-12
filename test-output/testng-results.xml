@@ -5,38 +5,38 @@
       <![CDATA[Title Test Passed]]>
     </line>
     <line>
-      <![CDATA[Signup Page Test Passed]]>
+      <![CDATA[Login Page Test Passed]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-11-22T21:51:15 IST" name="Default suite" finished-at="2024-11-22T21:51:48 IST" duration-ms="32993">
+  <suite started-at="2024-12-12T12:56:06 IST" name="Default suite" finished-at="2024-12-12T12:56:29 IST" duration-ms="22778">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test.TestRunner1@2362f559]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test.TestRunner2@2362f559]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-11-22T21:51:15 IST" name="Default test" finished-at="2024-11-22T21:51:48 IST" duration-ms="32993">
-      <class name="test.TestRunner1">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:test.TestRunner1@2362f559]" started-at="2024-11-22T21:51:15 IST" name="setUpClass" finished-at="2024-11-22T21:51:16 IST" duration-ms="1473" status="PASS">
+    <test started-at="2024-12-12T12:56:06 IST" name="Default test" finished-at="2024-12-12T12:56:29 IST" duration-ms="22778">
+      <class name="test.TestRunner2">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:test.TestRunner2@2362f559]" started-at="2024-12-12T12:56:06 IST" name="setUpClass" finished-at="2024-12-12T12:56:08 IST" duration-ms="1867" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@445bb139]]>
+                <![CDATA[org.testng.TestRunner@7d2998d8]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test.TestRunner1@2362f559]" started-at="2024-11-22T21:51:16 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-22T21:51:48 IST" duration-ms="31277" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test.TestRunner2@2362f559]" started-at="2024-12-12T12:56:08 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-12T12:56:29 IST" duration-ms="20672" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["validate signup functionality with valid information"]]>
+                <![CDATA["Validate Login Scenario with valid credentials"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Signup module"]]>
+                <![CDATA["Login feature"]]>
               </value>
             </param>
           </params>
@@ -45,15 +45,15 @@
               <![CDATA[Title Test Passed]]>
             </line>
             <line>
-              <![CDATA[Signup Page Test Passed]]>
+              <![CDATA[Login Page Test Passed]]>
             </line>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:test.TestRunner1@2362f559]" started-at="2024-11-22T21:51:48 IST" name="tearDownClass" finished-at="2024-11-22T21:51:48 IST" duration-ms="132" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:test.TestRunner2@2362f559]" started-at="2024-12-12T12:56:29 IST" name="tearDownClass" finished-at="2024-12-12T12:56:29 IST" duration-ms="128" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- test.TestRunner1 -->
+      </class> <!-- test.TestRunner2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
