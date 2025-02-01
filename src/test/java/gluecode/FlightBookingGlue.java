@@ -37,7 +37,6 @@ public class FlightBookingGlue
 		fbp.click_flights();
 	}
 	
-	
 	@When("I select Leaving From as {string} and verify Going To does not include {string}")
 	public void i_select_leaving_from_as_and_verify_going_to_does_not_include(String string, String string2) 
 	{

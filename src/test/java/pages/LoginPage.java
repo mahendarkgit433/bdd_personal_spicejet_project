@@ -2,7 +2,9 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -13,7 +15,7 @@ public class LoginPage
 	RemoteWebDriver driver;
 	FluentWait<RemoteWebDriver> fwait;
 
-	@FindBy(xpath="//div[text()='Login']")
+	@FindBy(how=How.XPATH,using="//div[text()='Login']") @CacheLookup
 	private WebElement login_button;
 
 	@FindBy(xpath="//div[text()='Mobile Number']")
@@ -44,7 +46,6 @@ public class LoginPage
 	public void click_login()
 	{
 		fwait.until(ExpectedConditions.visibilityOf(login_button)).click();
-		//login_button.click();
 	}
 
 	public void fill_mobile_number_or_emailid(String mbnloremailid,String selectionType)
