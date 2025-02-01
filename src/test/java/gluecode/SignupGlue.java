@@ -16,7 +16,7 @@ import io.cucumber.java.en.When;
 import pages.SignupPage;
 import utilities.WebSiteUtility;
 
-public class SignupGlue 
+public class SignupGlue
 {
 	RemoteWebDriver driver;
 	FluentWait<RemoteWebDriver> wait;
@@ -95,8 +95,9 @@ public class SignupGlue
 	}
 
 	@When("select title")
-	public void select_title()
+	public void select_title() throws Exception
 	{
+		Thread.sleep(1000);
 		signup.title_Select_VisibleText("Mrs");
 	}
 

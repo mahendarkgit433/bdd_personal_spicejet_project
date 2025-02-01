@@ -12,6 +12,6 @@ plugin = {"pretty", "html:target/cucumber.html",
 dryRun = false,
 monochrome = true
 		) 
-public class TestRunner2 extends AbstractTestNGCucumberTests
+public class TestRunnerLogin extends AbstractTestNGCucumberTests
 {
 }

@@ -2,7 +2,7 @@ Feature: Signup module
 
 Background:
 
-Given open browser "edge"
+Given open browser "firefox"
 When launch site
 Then i should see the title contains "SpiceJet"
 

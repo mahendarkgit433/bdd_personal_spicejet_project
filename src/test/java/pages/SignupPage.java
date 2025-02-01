@@ -24,7 +24,7 @@ public class SignupPage
 	@FindBy(xpath="//div[text()='Signup']/..") @CacheLookup
 	private WebElement signup;
 
-	@FindBy(xpath="(//select)[1]")
+	@FindBy(xpath="//option[starts-with(text(),'Select')]/..") @CacheLookup
 	private WebElement title_dropdown;
 
 	@FindBy(id="first_name")
@@ -86,12 +86,7 @@ public class SignupPage
 		select = new Select(title_dropdown);
 		select.selectByVisibleText(text);
 	}
-	//method by index for select class
-	public void title_Select_ByIndex(int index)
-	{
-		select = new Select(title_dropdown);
-		select.selectByIndex(index);
-	}
+
 	public void fill_first_middle_name(String name)
 	{
 		first_middle_name.sendKeys(name);
