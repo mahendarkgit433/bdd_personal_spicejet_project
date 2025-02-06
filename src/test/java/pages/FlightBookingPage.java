@@ -63,6 +63,12 @@ public class FlightBookingPage
 	@FindBy(xpath="//div[text()='Search Flight']")
 	private WebElement searchflight;
 	
+	@FindBy(xpath="(//*[local-name()='svg'])[last()-1]")
+	private WebElement clickCheckBox;
+	
+	@FindBy(xpath="//div[text()='Continue']")
+	private WebElement clickContinuebtn;
+	
 	public FlightBookingPage(RemoteWebDriver driver,FluentWait<RemoteWebDriver> fwait)
 	{
 		PageFactory.initElements(driver,this);
@@ -83,6 +89,16 @@ public class FlightBookingPage
 	public void roundtrip()
 	{
 		fwait.until(ExpectedConditions.visibilityOf(roundtrip)).click();
+	}
+	
+	public void enterFromCity(String city)
+	{
+		fwait.until(ExpectedConditions.visibilityOf(from)).sendKeys(city);
+	}
+	
+	public void enterToCity(String city)
+	{
+		fwait.until(ExpectedConditions.visibilityOf(to)).sendKeys(city);
 	}
 	
 	public void departure()

@@ -120,8 +120,9 @@ public class SignupGlue
 	}
 
 	@When("enter date of birth")
-	public void enter_date_of_birth() 
+	public void enter_date_of_birth() throws Exception
 	{
+		Thread.sleep(1000);
 		signup.fill_date_of_birth("24","October","1994");
 	}
 

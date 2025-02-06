@@ -27,7 +27,7 @@ public class FlightBookingGlue
 	}
 
 	@Given("I am on the SpiceJet flight booking page")
-	public void i_am_on_the_spice_jet_flight_booking_page() throws Exception 
+	public void flightBookingLinkClick() throws Exception 
 	{
 	    // Write code here that turns the phrase above into concrete actions
 		web = new WebSiteUtility();
@@ -38,60 +38,57 @@ public class FlightBookingGlue
 	}
 	
 	@When("I select Leaving From as {string} and verify Going To does not include {string}")
-	public void i_select_leaving_from_as_and_verify_going_to_does_not_include(String string, String string2) 
+	public void method2(String string, String string2) 
 	{
-	
+		fbp.enterFromCity(string);
+		//verify Going To does not include		
 	}
 
 	@When("I select Going To as {string}")
-	public void i_select_going_to_as(String string)
+	public void method3(String string)
 	{
-
+		fbp.enterToCity(string);
 	}
 
 	@When("I select Departure Date as {string}")
-	public void i_select_departure_date_as(String string)
+	public void method4(String string)
 	{
 	  
 	}
 
 	@When("I select {string} as the passenger type")
-	public void i_select_as_the_passenger_type(String string) 
+	public void method5(String string) 
 	{
 		Reporter.log("Hi",true);
 	}
 
 	@When("I select {string} as the preferred currency")
-	public void i_select_as_the_preferred_currency(String string) 
+	public void method6(String string) 
 	{
 	   
 	}
 
 	@When("I enter Adults as {string} and Children as {string}")
-	public void i_enter_adults_as_and_children_as(String string, String string2)
+	public void method7(String string, String string2)
 	{
 	 
 	}
 
 	@Then("I should see flight options matching the criteria")
-	public void i_should_see_flight_options_matching_the_criteria() 
+	public void method8() 
 	{
 	  
 	}
 
 	@Then("I verify the displayed flights meet the booking details")
-	public void i_verify_the_displayed_flights_meet_the_booking_details() 
+	public void method9() 
 	{
 	 
 	}
 
 	@When("I select Departure Date as {string} and  Return date as {string}")
-	public void i_select_departure_date_as_and_return_date_as(String string, String string2) 
+	public void method10(String string, String string2) 
 	{
 	 Reporter.log("I am on the SpiceJet flight booking page man good job.",true);
 	}
-
-
-
-
 }

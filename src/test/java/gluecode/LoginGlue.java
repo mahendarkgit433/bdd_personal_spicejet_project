@@ -25,7 +25,7 @@ public class LoginGlue
 		this.sh=sh;
 		this.se=sh.se;
 	}
-	//Background steps are already in sign up feature so code re usability
+	//Background steps are already in sign up feature so code re usability is acheieved here
 	@When("click on login button")
 	public void login_button() throws Exception
 	{
@@ -33,6 +33,7 @@ public class LoginGlue
 		this.driver=sh.driver;
 		fwait = web.defineWait(driver);
 		lp = new LoginPage(driver,fwait);
+		Thread.sleep(2000);
 		lp.click_login();
 	}
 	

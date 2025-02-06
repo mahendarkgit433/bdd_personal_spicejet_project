@@ -11,3 +11,7 @@ use extent and allure reports for advanced reporting.
 integrate with git repo and jenkis for CI/CD pipeline auto triggering.
 
 In Repo,give clear explaination about what you did in this project in readme file
+
+Add tags/Labels to the scenarios, examples: and features like @smoketest @retest @sanitytest
+
+customize the TestRunner classes and TestNG suite xml files.
