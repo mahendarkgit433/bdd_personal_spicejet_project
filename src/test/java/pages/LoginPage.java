@@ -15,6 +15,7 @@ public class LoginPage
 	RemoteWebDriver driver;
 	FluentWait<RemoteWebDriver> fwait;
 
+	//Locators to conduct happy paths testing
 	@FindBy(how=How.XPATH,using="//div[text()='Login']") @CacheLookup
 	private WebElement login_button;
 
@@ -25,17 +26,30 @@ public class LoginPage
 	private WebElement email_radio;
 	
 	@FindBy(xpath="//input[contains(@data-testid,'mobileno')]")
-	private WebElement mobile_number;
-
-	@FindBy(xpath="//input[@type='email']")
-	private WebElement email_id;
+	private WebElement mobile_number_or_emailid;
 
 	@FindBy(xpath="//input[@type='password']")
 	private WebElement password;
 
 	@FindBy(xpath="//div[@data-testid='login-cta']")
 	private WebElement login;
-
+	
+	//Locators to conduct fuzzy testing.
+	@FindBy(xpath="//div[text()='Please enter a valid mobile number']")
+	private WebElement mobileNumberErrorMessege;
+	//Check mobile number criteria should be 10.not less than or greater than 10 check with invalid data.
+	
+	@FindBy(xpath="//div[text()='Please enter a valid email address']")
+	private WebElement emailIdErrorMessege;
+	
+	@FindBy(xpath="//div[text()='Please enter a valid password']")
+	private WebElement passwordErrorMessege;
+	//To the above invalid message locator develop methods for interaction in future for negative test pass for invalid details
+	
+	//When we try to login invalid mobile/email with invalid password we get below error
+	@FindBy(xpath="//div[text()='Invalid Username/Password']")
+	private WebElement invalidUserNamePasswordmessege;
+	
 	public LoginPage(RemoteWebDriver driver,FluentWait<RemoteWebDriver> fwait)
 	{
 		PageFactory.initElements(driver,this);
@@ -53,14 +67,13 @@ public class LoginPage
 		if(selectionType.equalsIgnoreCase("mobile"))
 		{
 		fwait.until(ExpectedConditions.visibilityOf(mobile_radio)).click();		
-		fwait.until(ExpectedConditions.visibilityOf(mobile_number)).sendKeys(mbnloremailid);
+		fwait.until(ExpectedConditions.visibilityOf(mobile_number_or_emailid)).sendKeys(mbnloremailid);
 		}
 		else if(selectionType.equalsIgnoreCase("email"))
 		{
 		fwait.until(ExpectedConditions.visibilityOf(email_radio)).click();
-		fwait.until(ExpectedConditions.visibilityOf(email_id)).sendKeys(mbnloremailid);
+		fwait.until(ExpectedConditions.visibilityOf(mobile_number_or_emailid)).sendKeys(mbnloremailid);
 		}
-		
 		else
 		{
 			Reporter.log("Invalid selection type",true);

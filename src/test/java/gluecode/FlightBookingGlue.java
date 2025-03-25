@@ -8,7 +8,7 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.FlightBookingPage;
+import pages.FlightBookingPage1;
 import utilities.WebSiteUtility;
 
 public class FlightBookingGlue 
@@ -17,7 +17,7 @@ public class FlightBookingGlue
 	FluentWait<RemoteWebDriver> fwait;
 	WebSiteUtility web;
 	Scenario se;
-	FlightBookingPage fbp;
+	FlightBookingPage1 fbp;
 	Shared sh;
 	
 	public FlightBookingGlue(Shared sh)
@@ -33,7 +33,7 @@ public class FlightBookingGlue
 		web = new WebSiteUtility();
 		this.driver=sh.driver;
 		fwait = web.defineWait(driver);
-		fbp = new FlightBookingPage(driver,fwait);
+		fbp = new FlightBookingPage1(driver,fwait);
 		fbp.click_flights();
 	}
 	

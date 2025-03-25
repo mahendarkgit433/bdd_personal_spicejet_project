@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
-public class FlightBookingPage 
+public class FlightBookingPage1 
 {
 	RemoteWebDriver driver;
 	FluentWait<RemoteWebDriver> fwait;
@@ -63,13 +63,18 @@ public class FlightBookingPage
 	@FindBy(xpath="//div[text()='Search Flight']")
 	private WebElement searchflight;
 	
-	@FindBy(xpath="(//*[local-name()='svg'])[last()-1]")
-	private WebElement clickCheckBox;
+	//After click on search flight button, if no flights shown in next page then show error in else block or in catch block logic
+	//"Unfortunately, there are no flights available for the Family & Friends fare." like this messege appears
 	
-	@FindBy(xpath="//div[text()='Continue']")
-	private WebElement clickContinuebtn;
+	//Locator for error message with empty destination and click on search flight button
+	@FindBy(xpath="//div[text()='Destination city cannot be empty']")
+	private WebElement errorMessege1;
 	
-	public FlightBookingPage(RemoteWebDriver driver,FluentWait<RemoteWebDriver> fwait)
+	//Locator for error message with empty origin and click on search flight button
+	@FindBy(xpath="//div[text()='Origin city cannot be empty']")
+	private WebElement errorMessege2;
+	
+	public FlightBookingPage1(RemoteWebDriver driver,FluentWait<RemoteWebDriver> fwait)
 	{
 		PageFactory.initElements(driver,this);
 		this.driver=driver;
@@ -113,5 +118,31 @@ public class FlightBookingPage
 		fwait.until(ExpectedConditions.visibilityOf(to)).click();
 		List<WebElement> rows=to.findElements(By.xpath("child::div"));
 		rows.get(3).click();
+	}
+	
+	public void passengers()
+	{
+		fwait.until(ExpectedConditions.visibilityOf(passengers)).click();
+	}
+	
+	public void currency()
+	{
+		fwait.until(ExpectedConditions.visibilityOf(currency)).click();
+	}
+	
+	public void familyandfriends()
+	{
+		fwait.until(ExpectedConditions.visibilityOf(familyandfriends)).click();
+	}
+	
+	public void seniorcitizen()
+	{
+		fwait.until(ExpectedConditions.visibilityOf(seniorcitizen)).click();
+	}
+	
+	//assert the next page is displayed or not.
+	public void clickSearchFlight()
+	{
+		
 	}
 }

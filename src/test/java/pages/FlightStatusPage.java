@@ -38,6 +38,5 @@ public class FlightStatusPage
 		this.driver=driver;
 		this.fwait=fwait;
 		PageFactory.initElements(driver,this);
-	}
-	
+	}	
 }

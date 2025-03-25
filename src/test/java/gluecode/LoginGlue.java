@@ -61,9 +61,10 @@ public class LoginGlue
 	}
 	
 	@When("click on submit login button")
-	public void click_on_login_button()
+	public void click_on_login_button() throws Exception
 	{
 		lp.click_login_button();
+		Thread.sleep(5000);//Wait for 5 seconds after clicking login button in login page to load home page or to get error message
 	}
 	
 	@Then("login page should be displayed")

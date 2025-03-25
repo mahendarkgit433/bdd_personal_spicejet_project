@@ -21,6 +21,7 @@ public class SignupPage
 	FluentWait<RemoteWebDriver> fwait;
 	Select select;
 
+	//locators for happy paths testing
 	@FindBy(xpath="//div[text()='Signup']/..") @CacheLookup
 	private WebElement signup;
 
@@ -68,8 +69,17 @@ public class SignupPage
 
 	@FindBy(xpath="//button[text()='Submit']")
 	private WebElement submitbutton;
-
-	//Constructor method to link with step definiton class
+	
+	//Locators for fuzzy testing
+	@FindBy(how=How.XPATH,using="//div[starts-with(text(),'Password length should be min 8')]") @CacheLookup
+	private WebElement passwordLengthError;
+	//Year of birth should be in between 1925 to 2007 so perform boundary value analysis technique.take positive and negative test data. 
+	
+	@FindBy(how=How.XPATH,using="//div[contains(text(),'Please fill all mandatory fields')]") @CacheLookup
+	private WebElement mandatoryError;//This error occurs at top while click on signup button with blank or partial blank details.
+	//To the above invalid message locator develop methods for interaction in future for negative test pass for invalid details.
+	
+	//Constructor method to link with step definition and page classes
 	public SignupPage(RemoteWebDriver driver,FluentWait<RemoteWebDriver> fwait)
 	{
 		PageFactory.initElements(driver, this);
